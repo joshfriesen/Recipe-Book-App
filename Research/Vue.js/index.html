@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My first Vue app</title>
+  <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+
+  <h1>Recipe List Page</h1>
+
+  <p>
+    This page demonstrates the use of Vue.js to iterate over an array of data supplied by the page's JavaScript.
+    It enumerates the collection as an unordered list. The technique is extensible to rendering more items
+    and properties once the actual records are fetched from the database.
+  </p>
+
+  <ul id="recipes">
+    <li v-for="item in items">
+        Recipe ID {{ item.pk }}: {{ item.name }} ({{ item.cuisine }})
+    </li>
+  </ul>
+
+  <script>
+    var app = new Vue({
+      el: '#recipes',
+      data: {
+        items: [
+            { pk: 1, name: 'Chicken Marsala', cuisine: 'Italian' },
+            { pk: 2, name: 'Eggs Benedict', cuisine: 'English' }
+        ]}
+    })
+
+  </script>
+</body>
+</html>
